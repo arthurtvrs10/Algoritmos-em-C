@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main(void){
+	int mat[3][3], i, j,dig_principal, dig_secundaria, mult;
+	setlocale(LC_ALL, "Portuguese");
+	
+	for(i=0;i<3;i++){
+		for(j=0;j<3;j++){
+			printf("Digite um número para a posiçao de mat[%i][%i] =>",i+1,j+1);
+			scanf("%i", &mat[i][j]);
+		}
+	}
+	
+	system("CLS");
+	
+	printf("\a\n\n\t************\n");
+	for(i=0;i<3;i++){
+		printf("\t*|");
+		for(j=0;j<3;j++){
+			printf(" %i ",mat[i][j]);
+		}
+		printf("|*\n");
+	}
+	printf("\t************\n");
+	
+	dig_principal = mat[0][0] + mat[1][1] + mat[2][2];
+	dig_secundaria = mat[0][2] + mat[1][1] + mat[2][0]; 
+	mult = 	dig_principal * dig_secundaria;
+	printf("A multiplicação das duas diagonais é: [ %i ]", mult);
+	return 0;
+}
