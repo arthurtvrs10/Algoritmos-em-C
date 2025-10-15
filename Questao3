@@ -1,0 +1,39 @@
+package questao3;
+import java.util.Scanner;
+
+public class Questao3 {
+    public static void main(String[] args) {
+        int i, j;
+        int[][] minhaMatriz = new int[3][3];
+        
+        Scanner entrada = new Scanner(System.in);
+        
+        System.out.println("Preenchendo a Matriz");
+        for(i=0;i<3;i++){
+            for(j=0;j<3;j++){
+                System.out.println("Digite um número ===>>> ");
+                minhaMatriz[i][j] = entrada.nextInt();
+            }
+        }
+        System.out.println("Imprimindo a Matriz Inteira");
+        for(i=0;i<3;i++){
+            System.out.print("| ");
+            for(j=0;j<3;j++){
+                System.out.print(" "+minhaMatriz[i][j]);
+            }
+            System.out.println(" |");
+        }
+        
+        System.out.println("Imprimindo a Matriz Diagonal");
+        for(i=0;i<3;i++){
+            System.out.print("| ");
+            for(j=0;j<3;j++){
+                if(i == j){
+                System.out.print(" "+minhaMatriz[i][j]);
+                }
+            }
+            System.out.println(" |");
+        }
+    }
+    
+}
